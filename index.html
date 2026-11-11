@@ -83,7 +83,10 @@ h1.word{margin:0;font-family:var(--mono);font-weight:800;font-size:clamp(52px,9.
 .hero-mark{flex:1 1 260px;display:flex;justify-content:center}
 .hero-tile{width:min(360px,72vw);aspect-ratio:1;display:grid;place-items:center}
 .hero-tile svg{width:80%;height:auto}
-@media (max-width:700px){.hero .wrap{padding-top:64px;padding-bottom:72px}.hero-tile{width:220px}}
+/* Hide the big hero horse once it would drop below the text; the header still shows the small one */
+@media (min-width:1025px){.hero .wrap{flex-wrap:nowrap}.hero-mark{flex:0 0 auto}.hero-tile{width:min(360px,28vw)}}
+@media (max-width:1024px){.hero-mark{display:none}}
+@media (max-width:700px){.hero .wrap{padding-top:64px;padding-bottom:72px}}
 
 /* Sections */
 section{border-bottom:1px solid var(--line)}
