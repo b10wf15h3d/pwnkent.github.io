@@ -78,7 +78,12 @@ h1.word{margin:0;font-family:var(--mono);font-weight:800;font-size:clamp(52px,9.
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:4px;font-weight:700;font-size:18px;text-decoration:none}
 .btn-primary{background:var(--accent);color:var(--bg)} .btn-primary:hover{background:var(--accent-hover);color:var(--bg)}
 .btn-ghost{border:2px solid var(--line-2);color:var(--text)} .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-@media (max-width:700px){.hero .wrap{padding-top:64px;padding-bottom:72px}}
+.brand-mark{width:36px;height:36px;border-radius:8px;background:#161616;border:1px solid var(--line-2);display:grid;place-items:center}
+.brand-mark svg{width:22px;height:29px}
+.hero-mark{flex:1 1 260px;display:flex;justify-content:center}
+.hero-tile{width:min(360px,72vw);aspect-ratio:1;display:grid;place-items:center}
+.hero-tile svg{width:80%;height:auto}
+@media (max-width:700px){.hero .wrap{padding-top:64px;padding-bottom:72px}.hero-tile{width:220px}}
 
 /* Sections */
 section{border-bottom:1px solid var(--line)}
@@ -119,6 +124,7 @@ footer a{color:var(--text-2)}
 <header>
   <nav class="nav" aria-label="Main">
     <a class="brand" href="#top" aria-label="Pwn Kent home">
+      <span class="brand-mark"><svg viewBox="0 0 152 200" aria-hidden="true"><use href="#horse"/></svg></span>
       <span>PWN<span class="bar"></span>KENT</span>
     </a>
     <ul>
@@ -129,6 +135,13 @@ footer a{color:var(--text-2)}
     </ul>
   </nav>
 </header>
+
+<!-- Horse symbol, reused in the header and hero -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="horse" viewBox="40 0 152 200">
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M44 56 L58 36 Q66 24 76 18 L76 6 L82 15 L88 6 L89 18 L96 22 L94 28 L102 32 L99 38 L107 44 L103 50 L111 56 L107 62 L114 70 L136 100 Q146 108 150 116 Q166 104 186 110 Q174 116 182 130 Q172 124 168 130 Q178 138 176 154 Q164 138 156 138 Q160 150 156 160 L160 174 L152 188 L157 194 L140 194 L142 186 L146 174 L142 162 L134 154 L128 152 Q120 160 118 170 L108 186 L111 194 L95 194 L100 184 L108 166 Q112 152 110 146 L102 132 Q96 122 90 117 L79 118 L72 129 L75 139 L61 139 L63 128 L69 112 Q73 104 81 101 L85 96 L74 89 L66 96 L67 107 L53 107 L56 94 L67 80 Q75 74 85 76 Q89 66 82 58 L76 50 Q70 56 60 60 L50 64 Q44 64 44 56 Z M67 37 a3 3 0 1 0 0.01 0 Z"/>
+  </symbol>
+</svg>
 
 <main id="main">
 
@@ -146,6 +159,9 @@ footer a{color:var(--text-2)}
         <a class="btn btn-primary" href="https://www.linkedin.com/in/sam-macdonald-66967642/" rel="noopener">Register interest</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/sam-macdonald-66967642/" rel="noopener">Offer a talk</a>
       </div>
+    </div>
+    <div class="hero-mark">
+      <div class="hero-tile"><svg viewBox="0 0 152 200" role="img" aria-label="The Pwn Kent horse"><use href="#horse"/></svg></div>
     </div>
   </div>
 </section>
